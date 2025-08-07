@@ -11,22 +11,19 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-<<<<<<< HEAD
-=======
-    "@langchain/community": "^0.3.49",
->>>>>>> 96322d3 (node_modules ignore this time)
-    "@langchain/core": "^0.3.66",
+    "@dotenvx/dotenvx": "^1.48.4",
+    "@google/generative-ai": "^0.24.1",
+    "@langchain/community": "^0.3.50",
+    "@langchain/core": "^0.3.67",
     "@langchain/google-genai": "^0.2.16",
-    "@langchain/openai": "^0.6.3",
+    "@langchain/openai": "^0.6.4",
     "dot-env": "^0.0.1",
     "dotenv": "^17.2.1",
-<<<<<<< HEAD
-    "langchain": "^0.3.30",
-=======
     "ignore": "^5.3.2",
     "langchain": "^0.3.30",
+    "ml-distance": "^4.0.1",
     "pdf-parse": "^1.1.1",
->>>>>>> 96322d3 (node_modules ignore this time)
+    "similarity": "^1.2.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
   },

@@ -8,6 +8,8 @@ import ignore from "ignore";
 // Will not include anything under "ignorePaths"
 
 import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
+import path from 'path';
+
 
 
 
@@ -29,14 +31,13 @@ const webloaders = async () => {
 
 const pdfloader = async () => {
 
-    
-const nike10kPdfPath = '';
+const pdf_path = path.resolve(__dirname, '/Users/Ashish/Documents/Github_repos/langchain/langchain-js','gchat.pdf')
 
-const loader = new PDFLoader(nike10kPdfPath);
+const loader = new PDFLoader(pdf_path);
 
 const docs = await loader.load()
 
-console.log(docs.splice(0, 3))
+console.log(docs)
 
 }
 
@@ -45,4 +46,4 @@ console.log(docs.splice(0, 3))
 
 // run 
 // webloaders()
-// pdfloader()
+pdfloader()

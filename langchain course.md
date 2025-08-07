@@ -1,4 +1,4 @@
-#Deeplearing LLM Apps with LangChain js: 
+# Deeplearing LLM Apps with LangChain js: 
 
 ## Baisc
 
@@ -27,6 +27,8 @@
 ### Batch
  - many diffrent inputs in array of objects are passed to model and output is recived at once
 
+
+## RAG foundation
 
 ## Data loading and extraction 
 
@@ -64,11 +66,35 @@
 
         await splitter.splitText(code);
 
+## Vector Store
+
+### Vector storage : It is a specialized database which has NPL (Natural Language Search) capability 
+
+    - Embeddings : Embeddings are numerical representations of data (like words, images, or audio) that capture the semantic meaning and relationships between them. These representations, often vectors, allow machine learning models to understand and process complex information in a way that mimics human understanding. 
+
+                It convert text into vectors 
+
+    - Many providers embeddings are avilable for the use 
+
+#### Vector Ingestion  
+    - Its is a way of converting extracted data like text/image/video into vectors which can used by our llm to generate response
+
+    - using import { similarity } from 'ml-distance' : can compare two sentence if meaningful or not
+        v1 = "apple" , v2 ="apple juice" w similarity.cosine(v1 ,v2)  =>  0.7 - 0.8 , this shows similarity between two vectors 
+
+### PDF reader 
+- Pdf reader read page and covert them into chunk 
+- These chunks can move to vector store through emmbedding models
+
+## Retrivers 
+- vectors store can also be used in chaining or piping of inputs 
+- vectors store can invoke the database for a query answered by llm
 
 
 
 
 
+## Conversational model : Compliation of all above work
 
 
 
