@@ -15,7 +15,6 @@ import { configDotenv } from 'dotenv';
 
 require('@dotenvx/dotenvx').config()
 
-const key = 'AIzaSyDuhSE7sjk3vlGPq7hgwUsUs-uDrDkuL_0'
 
 // env varible management 
   const rootpath = path.resolve(__dirname, '../','.env')
