@@ -1,2 +1,6 @@
 *.env
+<<<<<<< HEAD
 /node_modules/
+=======
+/node_modules
+>>>>>>> 96322d3 (node_modules ignore this time)

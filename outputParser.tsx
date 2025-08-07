@@ -25,6 +25,10 @@ const outputParserFunc = async () => {
     const nameGenerationChain = prompt.pipe(model).pipe(outputParser)
 
 
+<<<<<<< HEAD
+=======
+    // -----------------------------------------------------------------------------------------------
+>>>>>>> 96322d3 (node_modules ignore this time)
 
     // invoking using chaining and output parser
 
@@ -32,6 +36,10 @@ const outputParserFunc = async () => {
     //     product: "colorful socks"
     // }).then((msg) => console.log(msg))
 
+<<<<<<< HEAD
+=======
+    // -----------------------------------------------------------------------------------------------
+>>>>>>> 96322d3 (node_modules ignore this time)
 
 
     // steaming
@@ -44,6 +52,10 @@ const outputParserFunc = async () => {
     //     console.log(chunk)
     // }
 
+<<<<<<< HEAD
+=======
+    // -----------------------------------------------------------------------------------------------
+>>>>>>> 96322d3 (node_modules ignore this time)
 
 
     // batching 

@@ -11,12 +11,22 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+<<<<<<< HEAD
+=======
+    "@langchain/community": "^0.3.49",
+>>>>>>> 96322d3 (node_modules ignore this time)
     "@langchain/core": "^0.3.66",
     "@langchain/google-genai": "^0.2.16",
     "@langchain/openai": "^0.6.3",
     "dot-env": "^0.0.1",
     "dotenv": "^17.2.1",
+<<<<<<< HEAD
     "langchain": "^0.3.30",
+=======
+    "ignore": "^5.3.2",
+    "langchain": "^0.3.30",
+    "pdf-parse": "^1.1.1",
+>>>>>>> 96322d3 (node_modules ignore this time)
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
   },
