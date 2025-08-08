@@ -68,7 +68,7 @@
 
 ## Vector Store
 
-### Vector storage : It is a specialized database which has NPL (Natural Language Search) capability 
+### Vector storage : It is a specialized database which has NPL (Natural Language Search) capability   
 
     - Embeddings : Embeddings are numerical representations of data (like words, images, or audio) that capture the semantic meaning and relationships between them. These representations, often vectors, allow machine learning models to understand and process complex information in a way that mimics human understanding. 
 
@@ -95,6 +95,24 @@
 
 
 ## Conversational model : Compliation of all above work
+
+### Question and Answer : 
+
+    file : ques-answer.tsx
+
+    - Loading : Data loading from various source like web links , pdf or sql data. This feed into the langchain using { PDFloader }
+
+    - Spliting: Splitting Data into chunks and feeding them into embedding models for embedding
+
+    - Vector store : These chunks can now be stored in vector store using the vectore store package of the langchain js. This vector store can be act as retreiver or invoke an answer from it.
+
+    - There can be custom string parser function as runnable
+
+    - Runnables : Now make a runnnable which will accept all the function names from loading to splitting to prompt and output.
+
+    - Runnables can have many runnable objects which can be run in sequence or mapping
+
+    
 
 
 
