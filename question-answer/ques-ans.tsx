@@ -51,7 +51,7 @@ const load_document = async () => {
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // splitting into chunks
-const split_document = async (chunkSize: number, chunkOverlap: number, pdf: any) => {
+const split_document = async (chunkSize: number, chunkOverlap: number, embeddings: GoogleGenerativeAIEmbeddings, pdf: any) => {
     const splitter = new RecursiveCharacterTextSplitter({
         chunkSize: chunkSize,
         chunkOverlap: chunkOverlap
@@ -94,7 +94,7 @@ const convertDocsToString = (documents: Document[] ) => {
 
 const runner = async () => {
     const thebook = await load_document()
-    const retriever = await split_document(1536, 128, thebook)
+    const retriever = await split_document(1536, 128,embeddings, thebook)
 
     // Runnable sequence
     const documentRetrievalChain = RunnableSequence.from([
@@ -202,3 +202,7 @@ runner()
 
 
 // parseOutput
+
+export { load_document, split_document, convertDocsToString};
+
+

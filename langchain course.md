@@ -112,6 +112,12 @@
 
     - Runnables can have many runnable objects which can be run in sequence or mapping
 
+## Conversational Question
+
+### Problem : Whenever we as the llm to list points based on chat history it cannot do it beacuse it doesn't have any chat history
+
+ - The idea is to use an history variable and the use of repeated prompt with question asked by the user
+
     
 
 
