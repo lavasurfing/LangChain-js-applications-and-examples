@@ -1,0 +1,10 @@
+Purpose: Define prompt templates.
+
+- `SYSTEM_TEMPLATE`: Instructs the model to answer using only provided context and history.
+- `answerPrompt`: Combines system message, `history`, and a human message to answer.
+- `condenseQuestionPrompt`: Rewrites the latest user question into a standalone question using history.
+
+These templates are used in the RAG chain to ensure responses are grounded and context-aware.
+
+
+

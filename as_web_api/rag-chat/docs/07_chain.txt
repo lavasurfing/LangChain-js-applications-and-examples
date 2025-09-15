@@ -1,0 +1,8 @@
+7) chain.tsx — Conversational RAG chain
+
+Flow:
+- Rephrase question → Retrieve context → Prompt → Generate answer.
+- Pipes through output parser to return plain text.
+- Uses per-session history for continuity.
+
+

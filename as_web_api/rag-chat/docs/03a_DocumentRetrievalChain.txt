@@ -1,0 +1,3 @@
+This runnable sequence have three componnents
+- function that accept an object and reture obj[ques] => questions
+- 

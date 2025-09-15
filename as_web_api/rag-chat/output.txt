@@ -1,0 +1,7 @@
+Purpose: Normalize chain output for HTTP.
+
+- Exposes an `HttpResponseOutputParser` configured to return `text/plain`.
+- Ensures the server can stream or return plain text responses cleanly.
+
+
+

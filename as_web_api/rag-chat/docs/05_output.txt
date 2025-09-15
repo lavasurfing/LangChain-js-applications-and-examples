@@ -1,0 +1,6 @@
+5) output.tsx — Output parser
+
+- Provides an HTTP response output parser returning `text/plain`.
+- Normalizes chain output for HTTP responses/streaming.
+
+

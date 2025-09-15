@@ -1,0 +1,6 @@
+6) memory.tsx — Per-session memory
+
+- Maps `sessionId` to `ChatMessageHistory`.
+- Keeps each user’s conversation isolated.
+
+

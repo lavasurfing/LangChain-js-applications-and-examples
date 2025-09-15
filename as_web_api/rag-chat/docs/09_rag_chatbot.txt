@@ -1,0 +1,7 @@
+9) rag_chatbot.tsx — Entry point
+
+- Starts the server on port 8090.
+- Use PowerShell: `npx ts-node as_web_api\rag-chat\rag_chatbot.tsx`.
+- Place PDFs in `as_web_api\rag-chat\data\`.
+
+

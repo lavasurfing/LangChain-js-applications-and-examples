@@ -1,0 +1,12 @@
+Purpose: Build a retriever from PDFs.
+
+- Splits documents using `RecursiveCharacterTextSplitter` (chunkSize=1000, overlap=200).
+- Embeds chunks with `embeddings` and stores them in `MemoryVectorStore`.
+- Returns a retriever interface for semantic search.
+
+Exports:
+- `buildRetriever()`: constructs and returns a retriever for queries.
+- `retrieveContext(question)`: convenience that fetches relevant docs and joins their text.
+
+
+

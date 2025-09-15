@@ -1,0 +1,7 @@
+4) prompts.tsx — Prompt templates
+
+- System prompt to constrain answers to given context.
+- Answer prompt that includes history and standalone question.
+- Condense-question prompt to rewrite the latest question.
+
+

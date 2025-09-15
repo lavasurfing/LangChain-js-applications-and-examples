@@ -1,0 +1,12 @@
+Purpose: Expose the RAG chatbot via HTTP.
+
+Endpoints:
+- `GET /health`: readiness probe.
+- `POST /chat`: body `{ question, sessionId }`; streams/collects chain output and returns `text/plain`.
+
+Details:
+- CORS + JSON middleware enabled.
+- Builds the conversational chain once on startup.
+- Each request passes `sessionId` to keep per-user history isolated.
+
+

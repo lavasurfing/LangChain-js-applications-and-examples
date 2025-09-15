@@ -1,0 +1,7 @@
+3) retriever.tsx — Split and index
+
+- Splits docs into chunks (1000/200).
+- Builds in-memory vector store with embeddings.
+- Exports a retriever interface for semantic search.
+
+

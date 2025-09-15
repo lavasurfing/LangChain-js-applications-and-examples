@@ -1,0 +1,6 @@
+2) loader.tsx — Load PDFs
+
+- Ensures `rag-chat/data/` exists; reads all PDFs.
+- Loads into LangChain `Document[]` for processing.
+
+

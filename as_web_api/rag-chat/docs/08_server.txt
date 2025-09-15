@@ -1,0 +1,6 @@
+8) server.tsx — HTTP server
+
+- Express app exposing `/health` and `/chat`.
+- Builds the chain at startup; handles requests with `sessionId`.
+
+

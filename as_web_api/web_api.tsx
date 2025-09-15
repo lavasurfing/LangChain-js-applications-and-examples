@@ -44,7 +44,7 @@ const AImodel = new ChatGoogleGenerativeAI({
   maxOutputTokens: 2048,
 });
 
-const web_api_llm = async () => {
+export const web_api_llm = async () => {
 
   const thepdf = await load_document();
   const the_retriever = await split_document(1000, 200, embeddings, thepdf);
@@ -151,34 +151,57 @@ const web_api_llm = async () => {
 
       }
 
-      // express server server creation 
+      // start express server using handler as callback
       const app = express();
-
-      // middleware
       app.use(cors());
       app.use(express.json());
 
-      app.get("/", () => {
-        return {"ping":"pong"}
-      } )
+      app.post("/chat", async (req, res) => {
+        try {
+          const request = new Request(`http://localhost:${port}/chat`, {
+            method: "POST",
+            headers: {
+              "content-type": "application/json"
+            },
+            body: JSON.stringify(req.body)
+          });
 
-      // app.post('/ask', async function (req : Request, res: Response){
-        
-      //   const body = req.json()
+          const response = await handler(request);
+          res.status(response.status);
+          response.headers.forEach((value, key) => {
+            res.setHeader(key, value);
+          });
 
+          const text = await response.text();
+          res.send(text);
+        } catch (error) {
+          console.error("/chat route error:", error);
+          res.status(500).send("Internal Server Error");
+        }
+      });
 
-      // });
+      app.get("/health", (_req, res) => {
+        res.status(200).send("ok");
+      });
 
       app.listen(port, () => {
-        console.log(`Server is running on http://localhost:${port}`);
+        console.log(`Server listening on http://localhost:${port}`);
       });
+
+
 
     }
 
 
-
-
     web_api_llm();
+
+
+
+
+
+
+
+
 
 
 

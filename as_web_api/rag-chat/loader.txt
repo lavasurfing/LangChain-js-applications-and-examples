@@ -1,0 +1,10 @@
+Purpose: Load raw documents.
+
+- Ensures a `data/` directory exists inside `rag-chat/`.
+- Reads all `.pdf` files in `data/` and loads them to LangChain `Document[]` using `PDFLoader`.
+
+Exports:
+- `loadAllPdfs()`: returns an array of `Document` objects for downstream splitting and embedding.
+
+
+

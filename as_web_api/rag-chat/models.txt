@@ -1,0 +1,14 @@
+Purpose: Centralized model and embedding setup.
+
+- Loads environment variables from the repo root (`.env`).
+- Creates `GoogleGenerativeAIEmbeddings` for document chunk embeddings.
+- Creates `ChatGoogleGenerativeAI` (Gemini) as the chat LLM used for:
+  - Condensing questions to standalone form
+  - Generating final answers from prompts and retrieved context
+
+Exports:
+- `embeddings`: used by the vector store to index chunks.
+- `chatModel`: used in both rephrasing and answering steps.
+
+
+

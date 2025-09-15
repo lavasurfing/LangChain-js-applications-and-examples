@@ -1,8 +1,10 @@
-# Deeplearing LLM Apps with LangChain js: 
+# Deeplearing LLM Apps with LangChain js
 
 ## Baisc
 
-### Prompt Template :  
+
+
+### Prompt Template
 - construct the  format and formatMessages
 
 - 
@@ -116,10 +118,6 @@
 
 ### Problem : Whenever we as the llm to list points based on chat history it cannot do it beacuse it doesn't have any chat history
 
- - The idea is to use an history variable and the use of repeated prompt with question asked by the user
+- The idea is to use an history variable and the use of repeated prompt with question asked by the user
 
-    
-
-
-
-
+## Shipping as Web API

@@ -1,0 +1,7 @@
+1) models.tsx — Models and embeddings
+
+- Sets up Gemini chat model and Google embeddings.
+- Loads `GOOGLE_API_KEY` from `.env`.
+- Exports `chatModel` and `embeddings` for downstream modules.
+
+

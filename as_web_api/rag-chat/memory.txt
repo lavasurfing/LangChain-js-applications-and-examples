@@ -1,0 +1,10 @@
+Purpose: Manage per-session conversation memory.
+
+- Maintains a map from `sessionId` to `ChatMessageHistory`.
+- Ensures each user/session gets isolated history.
+
+Exports:
+- `getHistoryForSession(sessionId)`: returns a memory store for that session.
+
+
+

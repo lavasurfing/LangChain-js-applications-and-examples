@@ -112,7 +112,7 @@ const Conversational_chat = async () => {
         ]
     ])
 
-    const repharseQuestionChain = RunnableSequence.from([
+     const repharseQuestionChain = RunnableSequence.from([
         rephraseQuestionChainPrompt,
         new ChatGoogleGenerativeAI({
             model: "gemini-2.0-flash",
@@ -233,7 +233,7 @@ const Conversational_chat = async () => {
 // RUNNERS 
 
 // Part - 1 : 
-Conversational_chat()
+Conversational_chat();
 
 
 
