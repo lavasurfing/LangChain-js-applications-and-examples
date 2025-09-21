@@ -25,6 +25,7 @@
     "langchain": "^0.3.30",
     "ml-distance": "^4.0.1",
     "pdf-parse": "^1.1.1",
+    "requirejs": "^2.3.7",
     "similarity": "^1.2.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"

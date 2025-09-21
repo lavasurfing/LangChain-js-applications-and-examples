@@ -46,8 +46,8 @@ export async function startAndChat(question: string, sessionId: string): Promise
 }
 
 // Example usage (uncomment to run directly):
-// (async () => {
-//   await ensureServerStarted();
-//   const answer = await chatWithServer("Hello", "demo-1");
-//   console.log(answer);
-// })();
+(async () => {
+  await ensureServerStarted();
+  const answer = await chatWithServer("Hello", "demo-1");
+  console.log(answer);
+})();

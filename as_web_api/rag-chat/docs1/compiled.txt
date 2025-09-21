@@ -1,0 +1,76 @@
+## 1. Loader
+
+### Purpose
+- Ensures a `data/` directory exists inside `rag-chat/`.
+- Reads all `.pdf` files in `data/` and loads them to LangChain `Document[]` using `PDFLoader`.
+
+### Exports
+- `loadAllPdfs()`: returns an array of `Document` objects for downstream splitting and embedding.
+
+
+## 2. Memory
+
+### Purpose
+- Maintains a map from `sessionId` to `ChatMessageHistory`.
+- Ensures each user/session gets isolated history.
+
+### Exports
+- `getHistoryForSession(sessionId)`: returns a memory store for that session.
+
+
+## 3. Models
+
+### Purpose
+- Loads environment variables from the repo root (`.env`).
+- Creates `GoogleGenerativeAIEmbeddings` for document chunk embeddings.
+- Creates `ChatGoogleGenerativeAI` (Gemini) as the chat LLM used for:
+  - Condensing questions to standalone form
+  - Generating final answers from prompts and retrieved context
+
+### Exports
+- `embeddings`: used by the vector store to index chunks.
+- `chatModel`: used in both rephrasing and answering steps.
+
+
+## 4. Output
+
+### Purpose
+- Exposes an `HttpResponseOutputParser` configured to return `text/plain`.
+- Ensures the server can stream or return plain text responses cleanly.
+
+
+## 5. Prompts
+
+### Purpose
+- `SYSTEM_TEMPLATE`: Instructs the model to answer using only provided context and history.
+- `answerPrompt`: Combines system message, `history`, and a human message to answer.
+- `condenseQuestionPrompt`: Rewrites the latest user question into a standalone question using history.
+
+- These templates are used in the RAG chain to ensure responses are grounded and context-aware.
+
+
+## 6. Retriever
+
+### Purpose
+- Splits documents using `RecursiveCharacterTextSplitter` (chunkSize=1000, overlap=200).
+- Embeds chunks with `embeddings` and stores them in `MemoryVectorStore`.
+- Returns a retriever interface for semantic search.
+
+### Exports
+- `buildRetriever()`: constructs and returns a retriever for queries.
+- `retrieveContext(question)`: convenience that fetches relevant docs and joins their text.
+
+
+## 7. Server
+
+### Purpose
+- Expose the RAG chatbot via HTTP.
+
+### Endpoints
+- `GET /health`: readiness probe.
+- `POST /chat`: body `{ question, sessionId }`; streams/collects chain output and returns `text/plain`.
+
+### Details
+- CORS + JSON middleware enabled.
+- Builds the conversational chain once on startup.
+- Each request passes `sessionId` to keep per-user history isolated.

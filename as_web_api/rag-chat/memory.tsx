@@ -2,14 +2,15 @@ import { ChatMessageHistory } from "@langchain/community/stores/message/in_memor
 
 type SessionId = string;
 
-const sessionIdToHistory: Record<SessionId, ChatMessageHistory> = {};
+// const sessionIdToHistory: Record<SessionId, ChatMessageHistory> = {};
+const messageHistories: Record<SessionId, ChatMessageHistory> = {};
 
 export function getHistoryForSession(sessionId: SessionId): ChatMessageHistory {
-  if (!sessionIdToHistory[sessionId]) {
-    sessionIdToHistory[sessionId] = new ChatMessageHistory();
+  if (messageHistories[sessionId] !== undefined) {
+    messageHistories[sessionId] = new ChatMessageHistory();
   }
-  return sessionIdToHistory[sessionId];
+  const newChatHistory = new ChatMessageHistory();
+  messageHistories[sessionId] = newChatHistory;
+  return newChatHistory;
 }
-
-
 

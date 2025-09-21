@@ -6,7 +6,9 @@ import { httpResponseOutputParser } from "./output";
 import { getHistoryForSession } from "./memory";
 import { RephraseQuestionChain } from "../../coversational_chat/converstion_export";
 import { document_retreival_chain } from "./document_retreival_chain";
-import { ChatMessageHistory } from "@langchain/community/stores/message/in_memory";
+
+
+import { TextDecoder } from "util";
 
 
 
@@ -28,9 +30,6 @@ export async function buildConversationalRagChain() {
     chatModel,
   ]);
 
-  const messageHistory = new ChatMessageHistory();
-
-  const messageHistories = {};
 
   const finalRetrievalChain = new RunnableWithMessageHistory({
     runnable: conversationalRetrievalChain,
@@ -43,5 +42,26 @@ export async function buildConversationalRagChain() {
   return finalRetrievalChain;
 
 }
+
+const testing = async () => {
+  const chain = await buildConversationalRagChain();
+  const response = await chain.invoke(
+    { question: "What are mathematical parts of this course?" },
+    { configurable: { sessionId: "default" } }
+  );
+  
+  console.log("response>:");
+  console.log(response);
+
+ }
+
+
+testing();
+
+
+
+
+
+
 
 

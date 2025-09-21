@@ -1,5 +1,4 @@
 import path from "path";
-import { configDotenv } from "dotenv";
 import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
 // Path to the PDF file
 const path_to_pdf = path.resolve(__dirname, '../../pdf_book', 'thebook.pdf');
