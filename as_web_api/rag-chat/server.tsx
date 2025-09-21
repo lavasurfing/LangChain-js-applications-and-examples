@@ -9,7 +9,7 @@ const app = express();
 const port = 3000;
 
 app.get("/",(req: any, res: any) => {
-    res.send("<h1>Hello World! This is RAG chat API</h1>");
+    res.send("<h1>Hello World! This is RAG chat API !</h1>");
 })
 
 
